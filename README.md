@@ -72,6 +72,48 @@ User authentication mechanisms are essential to ensure secure and authorized acc
 Client-server chat applications are versatile tools that facilitate real-time communication between users over a network. They incorporate various components, including server-side and client-side elements, and must consider factors such as security, scalability, and concurrency. As technology continues to advance, client-server chat applications remain integral for collaborative communication in various domains.
 
 Client-server chat applications are foundational to real-time communication over networks. They incorporate principles of socket programming, communication protocols, and security mechanisms to provide a seamless user experience. Understanding the basics of client-server chat applications is essential for developers involved in networked application development, as they form the backbone of various collaborative communication systems. As technology evolves, chat applications continue to adapt, incorporating new features and technologies to enhance user interaction and connectivity.
+## Program:
+## Client:
+```python
+import socket
+s = socket.socket()
+host = input(str('Enter hostname or host IP : ')) 
+port = 8080
+s.connect((host, port)) 
+print('Connected to chat server') 
+while 1:
+ incoming_message = s.recv(1024) 
+ incoming_message = incoming_message.decode() 
+ print(' Server : ',incoming_message) 
+ print()
+ message = input(str('>> ')) 
+ message =  message.encode() 
+ s.send(message) 
+ print('Sent')
+ print()
+```
+## Server:
+```python
+import socket
+s = socket.socket()
+host = input(str('Enter hostname or host IP : ')) 
+port = 8080
+s.connect((host, port)) 
+print('Connected to chat server') 
+while 1:
+ incoming_message = s.recv(1024) 
+ incoming_message = incoming_message.decode() 
+ print(' Server : ',incoming_message) 
+ print()
+ message = input(str('>> ')) 
+ message =  message.encode() 
+ s.send(message) 
+ print('Sent')
+ print()
+```
+## Output:
+
+<img width="2560" height="1440" alt="cn exp" src="https://github.com/user-attachments/assets/8a333962-9323-468f-a852-8c7b0e8a2379" />
 
 
 ## Result:
